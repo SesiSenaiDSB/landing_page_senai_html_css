@@ -1,4 +1,4 @@
-/* ======================= RESET BÁSICO ======================= */
+/* ======================= RESET Básico ======================= */
 /* Remove margens e paddings padrão e ajusta o box-sizing */
 * {
   margin: 0;
@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-/* Trabalhando com variáveis de CSS (Para as cores) */
+/* ======================= VARIÁVEIS DE TEMA (RAIZ) ======================= */
+/* Define as cores e fontes principais para fácil manutenção */
 :root {
   --cor-primaria: #F9003D;   /* Vermelho SENAI */
   --cor-secundaria: #A259F7; /* Roxo SENAI */
@@ -16,7 +17,7 @@
   --texto-cinza: #C7BAB3;    /* Cinza claro */
 }
 
-/* Estilos Gerais */
+/* ======================= ESTILOS GERAIS ======================= */
 body {
   background-color: var(--fundo-escuro);
   color: var(--texto-claro);
@@ -25,10 +26,12 @@ body {
   font-size: 18px;
 }
 
+/* Estilo para a tag <address> para remover o itálico padrão do navegador */
 address {
   font-style: normal;
 }
 
+/* Container padrão para centralizar o conteúdo */
 .container {
   width: 85%;
   max-width: 1200px;
@@ -36,7 +39,7 @@ address {
   padding: 1rem 0;
 }
 
-/* Header (Cabeçalho) */
+/* ======================= CABEÇALHO ======================= */
 .header {
   background-color: var(--cor-primaria);
   position: fixed; /* Mantém o cabeçalho no topo da tela */
@@ -44,6 +47,8 @@ address {
   z-index: 10;
   padding: 0.5rem 0;
 }
+
+/* Container flex do cabeçalho */
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -51,15 +56,18 @@ address {
   flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
   gap: 1rem;
 }
+
 .logo {
   height: 40px;
 }
+
 /* Menu de navegação */
 .menu {
   display: flex;
-  gap: 1.3rem;
+  gap: 1.5rem;
   list-style: none; /* Remove os marcadores da lista */
 }
+
 .menu a {
   color: var(--texto-claro);
   text-decoration: none;
@@ -72,7 +80,7 @@ address {
   color: var(--cor-destaque);
 }
 
-/* Estilo diferenciado para botão (Contate-nos) */
+/* Botão "Contate-nos" */
 .botao {
   background-color: var(--cor-secundaria);
   color: var(--texto-claro) !important; /* !important para sobrescrever a cor do link */
@@ -82,14 +90,14 @@ address {
   font-size: 1.2rem;
   transition: all 0.3s ease-in-out;
 }
+
 .botao:hover {
   background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   transform: translateY(-2px) scale(1.05); /* Efeito de elevação */
 }
 
-/* Main */
-/* Banner (Estilos) */
+/* ======================= BANNER PRINCIPAL ======================= */
 .banner {
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
               url("../assets/imagem-fundo-banner.jpg");
@@ -113,28 +121,33 @@ address {
   background-color: var(--cor-destaque);
   margin: 1rem auto;
 }
+
 .subtitulo {
   font-size: 1.8rem;
   color: var(--texto-cinza);
   margin-bottom: 2rem;
 }
+
 .mouse {
   width: 60px;
   margin-top: 2rem;
   opacity: 0.8;
 }
 
-/* Seção Sobre */
+/* ======================= SEÇÃO SOBRE ======================= */
 .sobre {
   background-color: #181012;
   padding: 4rem 0;
 }
-.titulo-secao{
+
+.titulo-secao {
   color: var(--cor-primaria);
   font-size: 3rem;
   margin-bottom: 2rem;
   text-align: center;
 }
+
+/* Container flex para organizar imagem e texto lado a lado */
 .conteudo-sobre {
   display: flex;
   gap: 3rem;
@@ -145,8 +158,9 @@ address {
 .imagem-sobre {
   width: 45%;
   border-radius: 10px;
-  min-width: 300px;
-  flex: 1;
+  /* Adicionado para evitar que a imagem encolha demais */
+  min-width: 300px; 
+  flex: 1; /* Permite que os itens cresçam e ocupem o espaço */
 }
 
 .texto-sobre {
@@ -154,27 +168,31 @@ address {
   min-width: 300px;
   flex: 1;
 }
+
 .destaque {
   color: var(--cor-destaque);
   font-weight: 700;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+
 .texto-sobre h3 {
   font-size: 2.5rem;
   margin: 1rem 0;
 }
+
 .texto-sobre p {
   color: var(--texto-cinza);
   font-size: 1.2rem;
 }
 
-/* Cards (Estilos) */
+/* ======================= SEÇÃO DE INFORMAÇÕES (CARDS) ======================= */
 .info {
   padding: 4rem 0;
   text-align: center;
 }
 
+/* Estilização da lista (UL) que contém os cards */
 .cards-info {
   list-style: none; /* Remove marcadores da lista */
   display: flex;
@@ -184,6 +202,7 @@ address {
   flex-wrap: wrap; /* Permite que os cards quebrem a linha */
 }
 
+/* Estilização de cada item da lista (LI) como um card */
 .card {
   background-color: #241A1C;
   padding: 2rem;
@@ -191,11 +210,13 @@ address {
   text-align: center;
   width: 300px;
 }
+
 .card h3 {
   color: var(--cor-destaque);
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
+
 .card p {
   background-color: var(--fundo-escuro);
   padding: 1.5rem;
@@ -204,51 +225,27 @@ address {
   font-size: 1.5rem;
 }
 
-/* Endereço e mapa (Estilos) */
 
-.endereco {
-  padding: 4rem 0;
-}
 
-.conteudo-endereco {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.mapa {
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Rodapé (Footer) */
-.footer {
-  background-color: var(--cor-primaria);
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 4rem;
-  font-size: 1.2rem;
-}
-
-/* __________________________ */
-/* RESPONSIVIDADE */
+/* ======================= RESPONSIVIDADE (MEDIA QUERIES) ======================= */
 @media (max-width: 768px) {
-  /* Haeder */
+
   .nav-header {
     justify-content: center; /* MUDANÇA: Altera de 'space-between' para 'center' */
   }
+
   .menu {
     padding-top: 0;
   }
-
+  
+  /* Coloca os elementos das seções um abaixo do outro */
   .conteudo-sobre,
   .conteudo-endereco {
     flex-direction: column; /* Coloca os itens em coluna */
     gap: 2rem;
   }
+
+  /* Faz a imagem e o texto ocuparem toda a largura */
   .imagem-sobre,
   .texto-sobre {
      width: 100%; /* Garante que ocupem 100% do container */
@@ -265,12 +262,6 @@ address {
   .titulo-secao { font-size: 2.5rem; }
   .texto-sobre h3 { font-size: 2rem; }
   .texto-sobre p { font-size: 1.1rem; }
-  .card h3, .card p {font-size: 1.5rem;}
-  .texto-endereco { font-size: 1.1rem;}
-
-  .mapa {
-    width: 100%;
-  }
 
 
 
